@@ -44,7 +44,7 @@ host('myapp.io') // Name of the server
 
 // Staging Server
 host('staging.myapp.io') // Name of the server
-->hostname('104.248.172.220') // Hostname or IP address
+->hostname('35.180.121.40') // Hostname or IP address
 ->stage('staging') // Deployment stage (production, staging, etc)
 ->user('root') // SSH user
 ->set('deploy_path', '/var/www/laravel-cicd-staging'); // Deploy path
