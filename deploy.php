@@ -6,7 +6,7 @@ namespace Deployer;
 require 'recipe/laravel.php';
 require 'recipe/rsync.php';
 
-set('application', 'My App');
+set('application', 'Laravel-CICD');
 set('ssh_multiplexing', true); // Speeds up deployments
 
 set('rsync_src', function () {
@@ -37,17 +37,17 @@ task('deploy:secrets', function () {
 
 // Production Server
 host('myapp.io') // Name of the server
-->hostname('104.248.172.220') // Hostname or IP address
+->hostname('35.180.121.40') // Hostname or IP address
 ->stage('production') // Deployment stage (production, staging, etc)
 ->user('root') // SSH user
-->set('deploy_path', '/var/www/my-app'); // Deploy path
+->set('deploy_path', '/var/www/laravel-cicd'); // Deploy path
 
 // Staging Server
 host('staging.myapp.io') // Name of the server
 ->hostname('104.248.172.220') // Hostname or IP address
 ->stage('staging') // Deployment stage (production, staging, etc)
 ->user('root') // SSH user
-->set('deploy_path', '/var/www/my-app-staging'); // Deploy path
+->set('deploy_path', '/var/www/laravel-cicd-staging'); // Deploy path
 
 after('deploy:failed', 'deploy:unlock'); // Unlock after failed deploy
 
