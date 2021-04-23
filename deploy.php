@@ -40,14 +40,14 @@ host('myapp.io') // Name of the server
 ->hostname('35.180.121.40') // Hostname or IP address
 ->stage('production') // Deployment stage (production, staging, etc)
 ->user('root') // SSH user
-->set('deploy_path', '/var/www/laravel-cicd'); // Deploy path
+->set('deploy_path', '/opt/lampp/htdocs/laravel-cicd'); // Deploy path
 
 // Staging Server
-host('staging.myapp.io') // Name of the server
-->hostname('35.180.121.40') // Hostname or IP address
-->stage('staging') // Deployment stage (production, staging, etc)
-->user('root') // SSH user
-->set('deploy_path', '/var/www/laravel-cicd-staging'); // Deploy path
+// host('staging.myapp.io') // Name of the server
+// ->hostname('35.180.121.40') // Hostname or IP address
+// ->stage('staging') // Deployment stage (production, staging, etc)
+// ->user('root') // SSH user
+// ->set('deploy_path', '/var/www/laravel-cicd-staging'); // Deploy path
 
 after('deploy:failed', 'deploy:unlock'); // Unlock after failed deploy
 
